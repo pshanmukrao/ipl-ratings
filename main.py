@@ -32,7 +32,9 @@ if __name__ == '__main__':
     for team, win in wins.items():
         print(f"{team.team_name} wins {win} matches")
 
-    for team in IPLTeam.dict.values():
+    teams = IPLTeam.dict.values()
+    teams = sorted(teams, key=lambda x: x.rating, reverse=True)
+    for team in teams:
         print(team)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
